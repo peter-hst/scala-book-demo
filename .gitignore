@@ -50,3 +50,7 @@ Icon
 ## hack for graddle wrapper
 !wrapper/*.jar
 !**/wrapper/*.jar
+## vscode
+.vscode/
+.metals/
+
