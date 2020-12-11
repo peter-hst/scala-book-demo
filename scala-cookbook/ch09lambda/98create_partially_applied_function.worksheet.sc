@@ -53,4 +53,18 @@ val handle1to10 = convert1to5 orElse convert6to10
 handle1to10(3)
 handle1to10(8) 
 // map方法中使用该函数将会导致MatchError
-//List(0,1,2) map {divide3}
+// List(0,1,2) map {divide3}
+//collect方法: 通过给列表中所有的元素应用偏函数,构建出一个新的集合,避免MatchError异常
+//collect方法会用isDefinedAt测试List中的每一个元素
+List(0,1,2) collect {divide3}
+List(42, "cat").connect{ case i:Int => i + 1}
+
+val sample = 1 to 5
+val isEven = new PartialFunction[Int,String] = {
+    case x if x % 2 == 0 => x + " is even"
+}
+val isOdd = new PartialFunction[Int, String] = {
+    case x if x % 2 == 1 => x + " is odd"
+}
+
+val numbers = sample map (isEven orElse isOdd)
