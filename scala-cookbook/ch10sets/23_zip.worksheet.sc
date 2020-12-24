@@ -10,7 +10,7 @@ for((wife,husband) <- couples){
 val couplesMap = couples.toMap
 //如果一个集合包含更多的元素，在较长集合结尾的元素会被忽略
 val products = Array("breadsticks","pizza","soft drink")
-val prices = Array(4)
+val prices = Array(4.0,1.0,1.5)
 val productsWithPrice = products.zip(prices)
 // unzip与zip方法相反
 val (a, b) = productsWithPrice.unzip
