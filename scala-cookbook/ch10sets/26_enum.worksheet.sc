@@ -28,3 +28,6 @@ package hst.peter.app{
     case object BOTTOM extends Margin
     case object LEFT extends Margin
 }
+/**
+  * refs: http://www.scala-lang.org/api/current/index.html#scala.Enumeration
+  */

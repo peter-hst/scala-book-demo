@@ -40,3 +40,18 @@ val al2 = new Person2("Al")
 val paul2 = new Person2("Paul")
 val dudes2 = List(ty2,al2,paul2)
 dudes2.sorted
+val sortedDudes = dudes2.sortWith(_.name < _.name)
+val dortedDudes2 = dudes2.sortWith(_.name > _.name)
+// 如果想用sorted方法排序Person类，只需把Ordered特质混入Person类
+
+//这个Person3类可以是哟个sorted，compare提供了排序的能力
+class Person3(var name:String) extends Ordered[Person3]{
+    override def toString(): String = name
+    def compare(that: Person3): Int = if(this.name == that.name) 0 else if(this.name > that.name) 1 else -1
+}
+
+/**
+  * Ordered和Ordering refs
+  * Ordering特质：http://www.scala-lang.org/api/current/index.html#scala.math.Ordering
+  * Ordered特质：http:://www.scala-lang.org/api/current/index.html#scala.math.Ordered
+  */
